@@ -4,7 +4,8 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "jest",
+    "test": "cross-env NODE_ICU_DATA=node_modules/full-icu jest --passWithNoTests --no-cache --runInBand",
+    "test:staged": "npm test -- --findRelatedTests",
     "lint": "eslint .",
     "lint:fix": "npm run lint -- --fix",
     "prepare": "husky install"
@@ -16,6 +17,7 @@
     "@types/jest": "^28.1.7",
     "@types/node": "^18.7.10",
     "@typescript-eslint/eslint-plugin": "^5.34.0",
+    "cross-env": "^7.0.3",
     "eslint": "^8.22.0",
     "eslint-config-standard-with-typescript": "^11.0.1",
     "eslint-plugin-import": "^2.26.0",
@@ -28,5 +30,6 @@
     "lint-staged": "^13.0.3",
     "ts-jest": "^28.0.8",
     "typescript": "^4.7.4"
-  }
+  },
+  "dependencies": {}
 }
